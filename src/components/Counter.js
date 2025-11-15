@@ -9,11 +9,11 @@ class Counter extends Component {
     }
 
     increment = () => {
-        this.setState({ count: this.state.count + 1 });
+        this.setState(prev => ({ count: prev.count + 1 }));
     };
 
     decrement = () => {
-        this.setState({ count: this.state.count - 1 });
+        this.setState(prev => ({ count: prev.count - 1 }));
     };
 
     render() {
@@ -27,7 +27,8 @@ class Counter extends Component {
                     fontFamily: "Arial, sans-serif",
                 }}
             >
-                <h1>Count: {count}</h1>
+                <h1>Counter App</h1>
+                <h2>Count: {count}</h2>
 
                 <div style={{ marginTop: "20px" }}>
                     <button
